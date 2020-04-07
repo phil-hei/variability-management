@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:vacomo="http://itea.amalthea.org/variability/0.7.0/Vacomo" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://itea.amalthea.org/variability/0.7.0/Vacomo">
+  <xsd:annotation>
+    <xsd:documentation>*
+*******************************************************************************
+ Copyright (c) 2017 Dortmund University of Applied Sciences and Arts, Paderborn University and others.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+*******************************************************************************</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+  <xsd:simpleType name="ComponentType">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="atomic"/>
+      <xsd:enumeration value="hierarchical"/>
+      <xsd:enumeration value="sensorActuator"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="VariableComponentModel">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="system" type="vacomo:System"/>
+      <xsd:element name="components" type="vacomo:Component"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="VariableComponentModel" type="vacomo:VariableComponentModel"/>
+  <xsd:complexType name="Component">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="ports" type="vacomo:Port"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+    <xsd:attribute name="type" type="vacomo:ComponentType"/>
+  </xsd:complexType>
+  <xsd:element name="Component" type="vacomo:Component"/>
+  <xsd:complexType abstract="true" name="Port">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Port" type="vacomo:Port"/>
+  <xsd:complexType name="RequiredPort">
+    <xsd:complexContent>
+      <xsd:extension base="vacomo:Port"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="RequiredPort" type="vacomo:RequiredPort"/>
+  <xsd:complexType name="ProvidedPort">
+    <xsd:complexContent>
+      <xsd:extension base="vacomo:Port"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ProvidedPort" type="vacomo:ProvidedPort"/>
+  <xsd:complexType name="System">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="connectors" type="vacomo:Connector"/>
+      <xsd:element name="compInstances" type="vacomo:ComponentInstance"/>
+      <xsd:element name="variationPoints" type="vacomo:VariationPoint"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="System" type="vacomo:System"/>
+  <xsd:complexType name="ComponentInstance">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="type" type="vacomo:Component"/>
+      <xsd:element name="subCompInstances" type="vacomo:ComponentInstance"/>
+      <xsd:element name="portInstances" type="vacomo:PortInstance"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="isOptional" type="xsd:boolean"/>
+    <xsd:attribute name="type" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ComponentInstance" type="vacomo:ComponentInstance"/>
+  <xsd:complexType name="PortInstance">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="type" type="vacomo:Port"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="isOptional" type="xsd:boolean"/>
+    <xsd:attribute name="type" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="PortInstance" type="vacomo:PortInstance"/>
+  <xsd:complexType abstract="true" name="Connector">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+  </xsd:complexType>
+  <xsd:element name="Connector" type="vacomo:Connector"/>
+  <xsd:complexType name="CommonConnector">
+    <xsd:complexContent>
+      <xsd:extension base="vacomo:Connector">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="source" type="vacomo:PortInstance"/>
+          <xsd:element name="target" type="vacomo:PortInstance"/>
+        </xsd:choice>
+        <xsd:attribute name="source" type="xsd:string"/>
+        <xsd:attribute name="target" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="CommonConnector" type="vacomo:CommonConnector"/>
+  <xsd:complexType name="VariableConnector">
+    <xsd:complexContent>
+      <xsd:extension base="vacomo:Connector">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="source" type="vacomo:PortInstance"/>
+          <xsd:element name="target" type="vacomo:PortInstance"/>
+        </xsd:choice>
+        <xsd:attribute name="source" type="xsd:string"/>
+        <xsd:attribute name="target" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="VariableConnector" type="vacomo:VariableConnector"/>
+  <xsd:complexType name="VariationPoint">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="variants" type="vacomo:Variant"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="VariationPoint" type="vacomo:VariationPoint"/>
+  <xsd:complexType name="Variant">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="compInstances" type="vacomo:ComponentInstance"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="compInstances" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Variant" type="vacomo:Variant"/>
+</xsd:schema>

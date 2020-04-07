@@ -1,0 +1,48 @@
+grammar org.itea2.amalthea.variability.dependency.Dependency with org.eclipse.xtext.common.Terminals
+
+generate dependency "http://www.itea2.org/amalthea/variability/dependency/Dependency"
+
+Dependency:
+	flatDependency=FlatDependency | hierarchicalDependencies+=HierarchicalDependency+
+;
+
+FlatDependency:
+	'[FlatDependency]' systemPart=SystemPart type=Type
+;
+
+HierarchicalDependency:
+	'[HierarchicalDependency]' '(Exclusive)'? systemPart=SystemPart 'StructureElements:' structureElements+=StructureElement+ 'Properties:' properties+=Property+
+;
+
+SystemPart:
+	'SystemPart:' name=ID
+;
+
+Type:
+	'Type:' type=ID
+;
+
+StructureElement:
+	name=ID
+;
+
+Property: 
+	'(' name=ID comparismOperator=ComparismOperator value=PropertyValue description=Description? ')'
+;
+
+Description:
+	'(' name=ID ')'
+;
+
+PropertyValue:
+	name=ID
+;
+
+enum ComparismOperator: 
+	EQUAL = '=' |
+	GREATER = '>' |
+	LESS = '<' |
+	GREATEREQUAL = '=>' |
+	LESSEQUAL = '<='
+;
+

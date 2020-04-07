@@ -1,0 +1,95 @@
+/**
+ * *******************************************************************************
+ *  Copyright (c) 2017 Dortmund University of Applied Sciences and Arts, Paderborn University and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * *******************************************************************************
+ */
+//// Vacomo = Variable Component Model
+@GenModel(modelName="Vacomo", prefix="Vacomo",
+	editDirectory="/org.itea2.amalthea.variability.components.edit/src-gen",
+	forceOverwrite="true", generateSchema="true",
+	loadInitialization="false",
+	copyrightText="*******************************************************************************\r\n Copyright (c) 2017 Dortmund University of Applied Sciences and Arts, Paderborn University and others.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n\r\n    Generated using Eclipse EMF\r\n\r\n*******************************************************************************")
+// Vacomo -> AMALTHEA Variable Component Model
+@Ecore(nsURI="http://itea.amalthea.org/variability/0.7.0/Vacomo")
+package org.itea2.amalthea.variability.vacomo
+
+class VariableComponentModel{ 
+	String name
+	contains System[0..1] system
+	contains Component[] components
+}
+
+class Component{
+	String name
+	String description
+	ComponentType ^type
+	contains Port[] ports
+}
+
+abstract class Port{
+	String name
+	String description
+}
+
+class RequiredPort extends Port{
+}
+
+class ProvidedPort extends Port{
+}
+
+class System{
+	String name
+	String description
+	contains Connector[] connectors
+	contains ComponentInstance[] compInstances
+	contains VariationPoint[] variationPoints
+}
+
+class ComponentInstance{
+	String name
+	Boolean isOptional = "false"
+	refers Component[1] ^type
+	contains ComponentInstance[] subCompInstances
+	contains PortInstance[] portInstances
+}
+
+class PortInstance{
+	String name
+	Boolean isOptional = "false"
+	refers Port[1] ^type
+}
+
+abstract class Connector{
+}
+
+class CommonConnector extends Connector{
+	refers PortInstance[1] source
+	refers PortInstance[1] target
+}
+
+class VariableConnector extends Connector{
+	refers PortInstance[1] source
+	refers PortInstance[2..*] target
+}
+
+class VariationPoint{
+	String name
+	String description
+	contains Variant[2..*] variants
+}
+
+class Variant{
+	String name
+	refers ComponentInstance[1..*] compInstances
+}
+
+enum ComponentType{
+	_undefined_ as "<CATEGORY>"
+	atomic as "ATOMIC"
+	hierarchical as "HIERARCHICAL"
+	sensorActuator as "SENSOR/ACTUATOR"
+}

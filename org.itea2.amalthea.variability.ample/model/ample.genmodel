@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.itea2.amalthea.variability.ample/src" modelPluginID="org.itea2.amalthea.variability.ample"
+    runtimeJar="true" modelName="Ample" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="" booleanFlagsField="eFlags" booleanFlagsReservedBits="8" importerID="org.eclipse.emf.ecore.xcore.importer"
+    containmentProxies="true" complianceLevel="8.0" language="en" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true" decoration="Live" oSGiCompatible="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter.xmi">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="EcoreXMI.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>ample.xcore</foreignModel>
+  <modelPluginVariables>org.eclipse.xtext.xbase.lib</modelPluginVariables>
+  <modelPluginVariables>org.eclipse.emf.ecore.xcore.lib</modelPluginVariables>
+  <genPackages prefix="Ample" basePackage="org.itea2.amalthea.variability" disposableProviderFactory="true"
+      ecorePackage="ample.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//ConstraintType">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ConstraintType/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ConstraintType/require"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ConstraintType/exclude"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ConstraintType/impedes"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ConstraintType/suggests"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//FrequencyUnit">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//FrequencyUnit/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//FrequencyUnit/hz"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//FrequencyUnit/khz"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//FrequencyUnit/mhz"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//FrequencyUnit/ghz"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//DataRateUnit">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataRateUnit/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataRateUnit/bitpers"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataRateUnit/kibitpers"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataRateUnit/mebibitpers"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataRateUnit/gibitpers"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//DataSizeUnit">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataSizeUnit/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataSizeUnit/byte"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataSizeUnit/kibibyte"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataSizeUnit/mebibyte"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//DataSizeUnit/gibibyte"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//ISA_Type">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ISA_Type/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ISA_Type/risc"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ISA_Type/cisc"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ISA_Type/vliw"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ISA_Type/simd"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ISA_Type/other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//BusType">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//BusType/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//BusType/can"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//BusType/ethernet"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//BusType/lin"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//BusType/flexray"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//BusType/spi"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//BusType/ttcan"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//BusType/other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//RW_Type">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//RW_Type/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//RW_Type/R"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//RW_Type/W"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//RW_Type/RW"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//ROM_Type">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ROM_Type/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ROM_Type/eprom"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ROM_Type/eeprom"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ROM_Type/flash"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//ROM_Type/OTHER"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//CacheType">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//CacheType/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//CacheType/data"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//CacheType/instruction"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//CacheType/unified"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//CacheType/other"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="ample.ecore#//LengthUnit">
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//LengthUnit/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//LengthUnit/mm"/>
+      <genEnumLiterals ecoreEnumLiteral="ample.ecore#//LengthUnit/cm"/>
+    </genEnums>
+    <genClasses ecoreClass="ample.ecore#//SystemFamily">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//SystemFamily/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//SystemFamily/featureModels"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//SystemFamily/hardwareVariabilityModels"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//FeatureModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//FeatureModel/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//FeatureModel/scope"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//FeatureModel/root"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//FeatureModel/constraints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//FeatureModel/productConfigurations"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//FeatureModel/featureTypes"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//ProductConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//ProductConfiguration/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//ProductConfiguration/selectedFeatures"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//FeatureConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//FeatureConstraint/type"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//FeatureConstraint/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//FeatureConstraint/target"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Feature">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Feature/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Feature/description"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//Feature/types"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Feature/solitaryFeatures"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Feature/featureGroups"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Feature/dependencies"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//FeatureType">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//FeatureType/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Dependency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Dependency/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Dependency/description"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ample.ecore#//SolitaryFeature"/>
+    <genClasses ecoreClass="ample.ecore#//Mandatory"/>
+    <genClasses ecoreClass="ample.ecore#//Optional"/>
+    <genClasses image="false" ecoreClass="ample.ecore#//FeatureGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//FeatureGroup/name"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//AlternativeGroup">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//AlternativeGroup/alternativeFeatures"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//OrGroup">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//OrGroup/min"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//OrGroup/max"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//OrGroup/orFeatures"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ample.ecore#//GroupFeature"/>
+    <genClasses ecoreClass="ample.ecore#//Alternative"/>
+    <genClasses ecoreClass="ample.ecore#//Or"/>
+    <genClasses ecoreClass="ample.ecore#//HardwareVariabilityModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//HardwareVariabilityModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareVariabilityModel/ecus"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareVariabilityModel/hwConfigs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareVariabilityModel/variationPoints"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareVariabilityModel/vpConstraints"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//HardwareConfiguration">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//HardwareConfiguration/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareConfiguration/selectedVPs"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ample.ecore#//HardwareElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//HardwareElement/identifier"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//HardwareElement/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareElement/customProperty"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareElement/genericComponents"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareElement/pins"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareElement/ports"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HardwareElement/dependencies"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//ECU">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//ECU/buses"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//ECU/dimension"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//ECU/microcontrollers"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//ECU/peripherals"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Microcontroller">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//Microcontroller/connectedMCs"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Microcontroller/cores"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Microcontroller/nestedMemory"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Core">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Core/bitWidth"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Core/isa"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Core/quantity"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Core/frequency"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Core/caches"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ample.ecore#//Memory">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Memory/size"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Cache">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Cache/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Cache/level"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Cache/frequency"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//RAM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//RAM/isVolatile"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//RAM/frequency"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//ROM">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//ROM/romType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//ROM/readTime"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//ROM/writeTime"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Bus">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Bus/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Bus/isSerial"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Bus/quantity"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Bus/rwType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//Bus/dataRate"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ample.ecore#//Peripheral"/>
+    <genClasses ecoreClass="ample.ecore#//Sensor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Sensor/quantity"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Actuator">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Actuator/quantity"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Watchdog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Watchdog/standard"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//GenericComponent">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//GenericComponent/hwType"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//GenericComponent/unit"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Pin">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Pin/num"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Port">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//Port/aggregatedPins"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//HVM_VariationPoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//HVM_VariationPoint/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//HVM_VariationPoint/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//HVM_VariationPoint/variationElements"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//VariationElement">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//VariationElement/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//VariationElement/affectedElement"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//VariationElement/removeElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//VariationElement/addElements"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference ample.ecore#//VariationElement/replaceElement"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//HVM_VariationPointConstraint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//HVM_VariationPointConstraint/constraintType"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//HVM_VariationPointConstraint/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference ample.ecore#//HVM_VariationPointConstraint/target"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Property/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Property/charValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Property/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Property/numValue"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Dimension">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Dimension/unit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Dimension/length"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Dimension/width"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Dimension/height"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="ample.ecore#//Unit">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Unit/value"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//Frequency">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//Frequency/frequencyUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//DataRate">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//DataRate/dataRateUnit"/>
+    </genClasses>
+    <genClasses ecoreClass="ample.ecore#//DataSize">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute ample.ecore#//DataSize/dataSizeUnit"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

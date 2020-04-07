@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: org.itea2.amalthea.variability.vacomo.edit;singleton:=true
+Automatic-Module-Name: org.itea2.amalthea.variability.vacomo.edit
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: org.itea2.amalthea.variability.vacomo.provider.VacomoEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.itea2.amalthea.variability.vacomo.provider
+Require-Bundle: org.eclipse.core.runtime,
+ org.itea2.amalthea.variability.vacomo;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy

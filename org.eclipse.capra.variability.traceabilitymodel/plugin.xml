@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated splTraceabilityModel -->
+      <package
+            uri="org.eclipse.capra.variability"
+            class="org.eclipse.capra.variability.VariabilityPackage"
+            genModel="model/splTraceabilityModel.xcore"/>
+   </extension>
+   <extension
+         point="org.eclipse.capra.configuration.traceabilityMetaModel">
+      <TraceabilityMetaModelAdapter
+            class="org.eclipse.capra.variability.traceabilitymodel.TraceMetaModelAdapter">
+      </TraceabilityMetaModelAdapter>
+   </extension>
+
+</plugin>

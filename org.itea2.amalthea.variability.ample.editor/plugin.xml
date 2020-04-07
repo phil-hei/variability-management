@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- not @generated ample -->
+      <category
+            id="org.itea2.amalthea.variability"
+            name="AMALTHEA Variability Management"/>W
+      <wizard
+            id="org.eclipse.app4mc.variability.ample.presentation.AmpleModelWizardID"
+            name="System Family"
+            class="org.itea2.amalthea.variability.ample.presentation.AmpleModelWizard"
+            category="org.itea2.amalthea.variability"
+            icon="icons/custom/SystemFamily.png">
+         <description>%_UI_AmpleModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+   
+    <extension
+         point="org.eclipse.ui.menus">
+      <!-- not @generated ample -->   
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.itea2.amalthea.variability.ample.presentation.AmpleEditorID?before=additions">
+         <command
+               commandId="org.itea2.amalthea.variability.ample.createProductConfiguration"
+               icon="icons/custom/configuration.png"
+               label="Manage Product Configuration"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false">
+                  <instanceof
+                        value="org.itea2.amalthea.variability.ample.ProductConfiguration">
+                  </instanceof>
+               </iterate>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.itea2.amalthea.variability.ample.deriveArchitecturalModel"
+               icon="icons/custom/SystemFamily.png"
+               label="Derive Architectural Model"
+               style="push">
+               <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false">
+                  <instanceof
+                        value="org.itea2.amalthea.variability.ample.ProductConfiguration">
+                  </instanceof>
+               </iterate>
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.itea2.amalthea.variability.ample.deriveRequirements"
+               icon="icons/custom/requirements.png"
+               label="Derive Requirements"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+               <iterate
+                     ifEmpty="false">
+                  <instanceof
+                        value="org.itea2.amalthea.variability.ample.ProductConfiguration">
+                  </instanceof>
+               </iterate>
+            </visibleWhen>
+         </command>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <command
+            id="org.itea2.amalthea.variability.ample.createProductConfiguration"
+            name="Manage Product Configuration">
+      </command>
+      <command
+            id="org.itea2.amalthea.variability.ample.deriveArchitecturalModel"
+            name="Derive Architectural Model">
+      </command>
+      <command
+            id="org.itea2.amalthea.variability.ample.deriveRequirements"
+            name="Derive Requirements">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.itea2.amalthea.variability.util.configuration.ConfigurationHandler"
+            commandId="org.itea2.amalthea.variability.ample.createProductConfiguration">
+      </handler>
+      <handler
+            commandId="org.eclipse.app4mc.variability.ample.deriveRequirements">
+      </handler>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated ample -->
+      <editor
+            id="org.itea2.amalthea.variability.ample.presentation.AmpleEditorID"
+            name="%_UI_AmpleEditor_label"
+            icon="icons/full/obj16/AmpleModelFile.gif"
+            extensions="ample"
+            class="org.itea2.amalthea.variability.ample.presentation.AmpleEditor"
+            contributorClass="org.itea2.amalthea.variability.ample.presentation.AmpleActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

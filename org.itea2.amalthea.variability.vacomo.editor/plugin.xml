@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+ <extension point="org.eclipse.ui.newWizards">
+      <!-- not @generated vacomo -->
+      <category
+            id="org.itea2.amalthea.variability"
+            name="AMALTHEA Variability Management"/>
+      <wizard
+            id="org.itea2.amalthea.variability.vacomo.presentation.VacomoModelWizardID"
+            name="VaCoMo"
+            class="org.itea2.amalthea.variability.vacomo.presentation.VacomoModelWizard"
+            category="org.itea2.amalthea.variability"
+            icon="icons/full/obj16/VacomoModelFile.gif">
+         <description>%_UI_VacomoModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated vacomo -->
+      <editor
+            id="org.itea2.amalthea.variability.vacomo.presentation.VacomoEditorID"
+            name="%_UI_VacomoEditor_label"
+            icon="icons/full/obj16/VacomoModelFile.gif"
+            extensions="vacomo"
+            class="org.itea2.amalthea.variability.vacomo.presentation.VacomoEditor"
+            contributorClass="org.itea2.amalthea.variability.vacomo.presentation.VacomoActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

@@ -1,0 +1,15 @@
+/CommonConnectorImpl.java
+/ComponentImpl.java
+/ComponentInstanceImpl.java
+/ConnectorImpl.java
+/PortImpl.java
+/PortInstanceImpl.java
+/ProvidedPortImpl.java
+/RequiredPortImpl.java
+/SystemImpl.java
+/VacomoFactoryImpl.java
+/VacomoPackageImpl.java
+/VariableComponentModelImpl.java
+/VariableConnectorImpl.java
+/VariantImpl.java
+/VariationPointImpl.java

@@ -1,0 +1,387 @@
+/**
+ * *******************************************************************************
+ *  Copyright (c) 2017 Dortmund University of Applied Sciences and Arts, Paderborn University and others.
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * *******************************************************************************
+ */
+//AMALTHEA Product Line Engineering => AMPLE
+@GenModel(
+	modelName="Ample", prefix="Ample",
+	editDirectory="/org.itea2.amalthea.variability.ample.edit/src-gen",
+	forceOverwrite="true",
+	creationSubmenus="true",
+	generateSchema="true",
+	loadInitialization="false",
+	copyrightText="*******************************************************************************\r\n Copyright (c) 2017 Dortmund University of Applied Sciences and Arts, Paderborn University and others.\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n\r\n    Generated using Eclipse EMF\r\n\r\n*******************************************************************************")
+@Ecore(
+	nsURI="http://itea.amalthea.org/variability/0.7.0/ample"
+)
+
+package org.itea2.amalthea.variability.ample
+
+/*
+ * This class aggregates different system parts (e.g. software, hardware, os)
+ * and function as root element for the variability modeling process
+ */
+class SystemFamily{
+	String name
+	contains FeatureModel[] featureModels
+	contains HardwareVariabilityModel[] hardwareVariabilityModels
+}
+
+/*
+ **************************************************************************************
+ * *************************** Feature Model ******************************************
+ * ************************************************************************************
+ */
+ 
+/*
+ * Feature models represents variability through a hierarchical arranged set of features
+ */
+class FeatureModel{
+	String name
+	String scope
+	contains Mandatory[1] root
+	contains FeatureConstraint[] constraints
+	contains ProductConfiguration[] productConfigurations
+	contains FeatureType[] featureTypes
+} 
+ 
+/*
+ *This class represents a distinct product configuration where all variation points of a Feature Model are bound
+ */
+class ProductConfiguration{
+	String name
+	refers Feature[] selectedFeatures
+}
+ 
+/*
+ * This class realizes cross-tree constraints between specific features by means of require and exclude
+ */
+class FeatureConstraint{
+	ConstraintType ^type
+	refers Feature[1] source
+	refers Feature[1] target
+}
+
+/*
+ * Represents a distinct product feature
+ */
+class Feature{
+	String name
+	String description
+	refers FeatureType[0..1] types
+	contains SolitaryFeature[] solitaryFeatures
+	contains FeatureGroup[] featureGroups
+	contains Dependency[] dependencies
+}
+
+/*
+ * Describes the scope of a feature in order to support references through dependencies. 
+ */
+class FeatureType{
+	String name
+}
+
+/*
+ * This class make use of a xtext grammar to describe a cross-dependency, i.e. a depedency between elements of different system parts
+ */
+class Dependency{
+	String name
+	String description = ""
+}
+
+abstract class SolitaryFeature extends Feature{
+}
+
+/*
+ * Features of this category are mandatory for the product configuration
+ */
+class Mandatory extends SolitaryFeature{
+}
+
+/*
+ * Features of this category are optional for the product configuration
+ */
+class Optional extends SolitaryFeature{
+}
+
+abstract class FeatureGroup{
+	String name
+}
+
+/*
+ * XOR decision for a given set of group features
+ */
+class AlternativeGroup extends FeatureGroup{
+	contains Alternative[2..*] alternativeFeatures
+}
+
+/*
+ * By default, at least one feature of an or group have to be selected. Can be refined with a cardinality (e.g. 2 out of 5 features have to be selected)
+ */
+class OrGroup extends FeatureGroup{
+	int min
+	int max
+	contains Or[2..*] orFeatures
+}
+
+abstract class GroupFeature extends Feature{
+}
+
+class Alternative extends GroupFeature{
+}
+
+class Or extends GroupFeature{
+}
+
+/*
+ **************************************************************************************
+ * *********************** Hardware Variability Model *********************************
+ * ************************************************************************************
+ */
+ 
+class HardwareVariabilityModel{
+	String name
+	contains ECU[+] ecus
+	contains HardwareConfiguration[] hwConfigs
+	contains HVM_VariationPoint[] variationPoints
+	contains HVM_VariationPointConstraint[] vpConstraints
+} 
+
+class HardwareConfiguration{
+	String name
+	refers HVM_VariationPoint[] selectedVPs
+}
+
+abstract class HardwareElement{
+	String identifier
+	String description
+	contains Property[] customProperty
+	contains GenericComponent[] genericComponents
+	contains Pin[] pins
+	contains Port[] ports
+	contains Dependency[] dependencies
+}
+
+class ECU extends HardwareElement{
+	contains Bus[] buses
+	contains Dimension[0..1] dimension
+	contains Microcontroller[+] microcontrollers
+	contains Peripheral[] peripherals
+}
+
+class Microcontroller extends HardwareElement{
+	refers Microcontroller[] connectedMCs
+	contains Core[+] cores
+	contains Memory[] nestedMemory
+}
+
+class Core extends HardwareElement{
+	int bitWidth
+	ISA_Type isa
+	int quantity = "1"
+	contains Frequency[0..1] frequency
+	contains Cache[1..*] caches
+}
+
+abstract class Memory extends HardwareElement{
+	contains DataSize[0..1] size
+}
+
+class Cache extends Memory{
+	CacheType ^type
+	int level
+	contains Frequency[0..1] frequency
+}
+
+class RAM extends Memory{
+	Boolean isVolatile
+	contains Frequency[0..1] frequency
+}
+
+class ROM extends Memory{
+	ROM_Type romType
+	contains DataRate[0..1] readTime
+	contains DataRate[0..1] writeTime
+}
+
+class Bus extends HardwareElement{
+	BusType ^type
+	Boolean isSerial
+	int quantity = "1"
+	RW_Type rwType
+	contains DataRate[0..1] dataRate
+}
+
+abstract class Peripheral extends HardwareElement{
+}
+
+class Sensor extends Peripheral{
+	int quantity = "1"
+}
+
+class Actuator extends Peripheral{
+	int quantity = "1"
+}
+
+class Watchdog extends Peripheral{
+	String standard
+}
+
+class GenericComponent extends HardwareElement{
+	String hwType
+	contains Unit[0..1] unit
+}
+
+class Pin extends HardwareElement{
+	int num
+}
+
+class Port extends HardwareElement{
+	refers Pin[] aggregatedPins
+}
+
+/* Variability */
+class HVM_VariationPoint{
+	String name
+	String description
+	contains VariationElement[] variationElements
+}
+
+class VariationElement{
+	String name
+	refers HardwareElement[1] affectedElement
+	refers HardwareElement[*] removeElements
+	contains HardwareElement[*] addElements
+	contains HardwareElement[0..1] replaceElement
+}
+
+class HVM_VariationPointConstraint{
+	ConstraintType constraintType
+	refers HVM_VariationPoint[1] source
+	refers HVM_VariationPoint[1] target
+}
+
+/* Attributes */
+class Property{
+	String name
+	String charValue
+	String description
+	Double numValue
+}
+
+class Dimension{
+	LengthUnit unit
+	int length
+	int width
+	int height
+}
+
+abstract class Unit{
+	BigInteger value
+}
+
+class Frequency extends Unit{
+	FrequencyUnit frequencyUnit
+}
+
+class DataRate extends Unit{
+	DataRateUnit dataRateUnit
+}
+
+class DataSize extends Unit{
+	DataSizeUnit dataSizeUnit
+}
+
+/*
+ **************************************************************************************
+ * **********************************Enumerations**************************************
+ * ************************************************************************************
+ */
+/*
+ * Enumeration of different constraint types (used by the VariationpointConstraint)
+ */
+enum ConstraintType{
+	_undefined_ as "<Undefined>"
+	require as "Require"
+	exclude as "Exclude"
+	impedes as "Impedes"
+	suggests as "Suggests"
+}
+
+enum FrequencyUnit{
+	_undefined_ as "<UNDEFINED>"
+	hz as "Hz"
+	khz as "KHz"
+	mhz as "MHz"
+	ghz as "GHz"
+}
+
+enum DataRateUnit{
+	_undefined_ as "<UNDEFINED>"
+	bitpers as "BitPerS"
+	kibitpers as "KibiBitPerS"
+	mebibitpers as "MebiBitPerS"
+	gibitpers as "GibiBittPerS"
+}
+
+enum DataSizeUnit{
+	_undefined_ as "<UNDEFINED>"
+	^byte as "Byte"
+	kibibyte as "KibiByte"
+	mebibyte as "MebiByte"
+	gibibyte as "GibiByte"
+}
+
+enum ISA_Type{
+	_undefined_ as "<UNDEFINED>"
+	risc as "RISC"
+	cisc as "CISC"
+	vliw as "VLIW"
+	simd as "SIMD"
+	other as "OTHER"
+}
+
+enum BusType{
+	_undefined_ as "UNDEFINED"
+	can as "CAN"
+	ethernet as "ETHERNET"
+	lin as "LIN"
+	flexray as "FLEXRAY"
+	spi as "SPI"
+	ttcan as "TTCAN"
+	other as "OTHER"
+}
+
+enum RW_Type{
+	_undefined_ as "<UNDEFINED>"
+	R as "R"
+	W as "W"
+	RW as "RW"
+}
+
+enum ROM_Type{
+	_undefined_ as "<UNDEFINED>"
+	eprom as "EPROM"
+	eeprom as "EEPROM"
+	flash as "FLASH"
+	OTHER as "OTHER"
+}
+
+enum CacheType{
+	_undefined_ as "<UNDEFINED>"
+	data as "DATA"
+	instruction as "INSTRUCTION"
+	unified as "UNIFIED"
+	other as "OTHER"
+}
+
+enum LengthUnit{
+	_undefined_ as "<UNDEFINED>"
+	mm as "MM"
+	cm as "CM"
+}

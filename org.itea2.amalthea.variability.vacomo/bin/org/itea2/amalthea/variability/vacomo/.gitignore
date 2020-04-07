@@ -1,0 +1,16 @@
+/CommonConnector.java
+/Component.java
+/ComponentInstance.java
+/ComponentType.java
+/Connector.java
+/Port.java
+/PortInstance.java
+/ProvidedPort.java
+/RequiredPort.java
+/System.java
+/VacomoFactory.java
+/VacomoPackage.java
+/VariableComponentModel.java
+/VariableConnector.java
+/Variant.java
+/VariationPoint.java

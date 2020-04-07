@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vacomo:VariableComponentModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:vacomo="http://itea.amalthea.org/variability/0.7.0/Vacomo" name="CarHeadlight Component Model">
+  <system name="CarHeadlightImpl" description="Represent the car headlight impl">
+    <compInstances name="CarHeadlightControlImpl" type="//@components.0"/>
+    <compInstances name="StaticCorneringLightImpl" isOptional="true" type="//@components.1"/>
+    <compInstances name="FogLightControlImpl" isOptional="true" type="//@components.2"/>
+    <compInstances name="DimLightControlImpl" type="//@components.3"/>
+    <compInstances name="DaytimeRunningLight" isOptional="true" type="//@components.4"/>
+    <compInstances name="TurnSignalControlImpl" type="//@components.5"/>
+    <compInstances name="StandardTurnSignalImpl" isOptional="true" type="//@components.6"/>
+    <compInstances name="DynamicTurnSignalImpl" isOptional="true" type="//@components.7"/>
+    <compInstances name="ParkingLightControlImpl" type="//@components.8"/>
+    <compInstances name="HighBeamAssistantImpl" isOptional="true" type="//@components.9"/>
+    <compInstances name="HighBeamControlImpl" type="//@components.10"/>
+    <compInstances name="StaticCorneringLightLEDImpl" isOptional="true" type="//@components.11"/>
+    <compInstances name="FogLightLEDImpl" isOptional="true" type="//@components.12"/>
+    <compInstances name="DimLightLEDImpl" type="//@components.13"/>
+    <compInstances name="DaytimeRunningLightLEDImpl" isOptional="true" type="//@components.14"/>
+    <compInstances name="TEPT4400Impl" isOptional="true" type="//@components.15"/>
+    <compInstances name="RightLightChaserLEDImpl" isOptional="true" type="//@components.16"/>
+    <compInstances name="LeftLightChaserLED" isOptional="true" type="//@components.16"/>
+    <compInstances name="RightTurnSignalLED" isOptional="true" type="//@components.17"/>
+    <compInstances name="LeftTurnSignalLEDImpl" isOptional="true" type="//@components.17"/>
+    <compInstances name="LeftParkingLightLEDImpl" type="//@components.18"/>
+    <compInstances name="RightParkingLightLEDImpl" type="//@components.18"/>
+    <compInstances name="HighBeamCamera" isOptional="true" type="//@components.19"/>
+    <compInstances name="HighBeamLEDImpl" type="//@components.20"/>
+    <variationPoints name="TurnSignalVP">
+      <variants name="DynamicTurnSignal" compInstances="//@system/@compInstances.7 //@system/@compInstances.17 //@system/@compInstances.16"/>
+      <variants name="StandardTurnSignal" compInstances="//@system/@compInstances.19 //@system/@compInstances.18 //@system/@compInstances.6"/>
+    </variationPoints>
+  </system>
+  <components name="CarHeadlightControl" description="Controls the car headlight components" type="ATOMIC"/>
+  <components name="StaticCorneringLight" type="ATOMIC"/>
+  <components name="FogLightControl" type="ATOMIC"/>
+  <components name="DimLightControl" description="" type="ATOMIC"/>
+  <components name="DaytimeRunningLight" type="ATOMIC"/>
+  <components name="TurnSignalControl" type="ATOMIC"/>
+  <components name="StandardTrunSignal" type="ATOMIC"/>
+  <components name="DynamicTurnSignal" description="" type="ATOMIC"/>
+  <components name="ParkingLightControl" type="ATOMIC"/>
+  <components name="HighBeamAssistant" type="ATOMIC"/>
+  <components name="HighBeamControl" type="ATOMIC"/>
+  <components name="StaticCorneringLightLED" type="SENSOR/ACTUATOR"/>
+  <components name="FogLightLED" type="SENSOR/ACTUATOR"/>
+  <components name="DimLightLED" type="SENSOR/ACTUATOR"/>
+  <components name="DaytimeRunningLightLED" type="SENSOR/ACTUATOR"/>
+  <components name="TEPT4400" type="SENSOR/ACTUATOR"/>
+  <components name="LighChaserLED" type="SENSOR/ACTUATOR"/>
+  <components name="TurnSignalLED" type="SENSOR/ACTUATOR"/>
+  <components name="ParkingLightLED" type="SENSOR/ACTUATOR"/>
+  <components name="HighBeamCamera" type="SENSOR/ACTUATOR"/>
+  <components name="HighBeamLED" type="SENSOR/ACTUATOR"/>
+</vacomo:VariableComponentModel>

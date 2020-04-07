@@ -1,0 +1,60 @@
+package org.eclipse.capra.variability
+
+import org.itea2.amalthea.variability.ample.Feature
+import org.itea2.amalthea.variability.ample.AlternativeGroup
+import org.itea2.amalthea.variability.vacomo.ComponentInstance
+import org.itea2.amalthea.variability.vacomo.VariationPoint
+import org.eclipse.rmf.reqif10.SpecHierarchy
+import org.eclipse.emf.ecore.EObject
+
+class SPL_TraceModel {
+	contains DomainTraceability[0..*] domainTraces
+	contains ApplicationTraceability[0..*] applicationTraces
+}
+
+abstract class DomainTraceability {
+}  
+   
+abstract class Refine extends DomainTraceability{
+}
+
+class Feature2ReqIf extends Refine{
+	refers Feature[1] feature
+	refers SpecHierarchy[] spec
+}
+
+class Reqif2Vacomo extends Refine{
+	refers SpecHierarchy[] spec
+	refers ComponentInstance[] component
+}
+
+class Vacomo2Yakindu extends Refine{
+	refers ComponentInstance[1] component
+	refers EObject[1] statechart
+}
+
+class Statechart2Cimpl extends Refine{
+	refers EObject[1] statechart
+	refers EObject[] cElements
+} 
+
+abstract class ApplicationTraceability {
+} 
+
+class Reqif2Reqif extends ApplicationTraceability{
+	refers SpecHierarchy[1] domainSpec
+	refers SpecHierarchy[1] appSpec
+}
+
+abstract class Variability extends DomainTraceability{ 
+}
+
+class Feature2Component extends Variability{
+	refers Feature[1] feature
+	refers ComponentInstance[] components
+}
+
+class Alternative2VariationPoint extends Variability{
+	refers AlternativeGroup[1] altGroup
+	refers VariationPoint[1] vacomoVP
+}

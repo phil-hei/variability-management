@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.itea2.amalthea.variability.dependency
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: org.itea2.amalthea.variability.dependency; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib,
+ org.antlr.runtime,
+ org.eclipse.xtext.util,
+ org.eclipse.xtend.lib,
+ org.eclipse.emf.common
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: org.itea2.amalthea.variability.dependency.dependency,
+ org.itea2.amalthea.variability.dependency.dependency.util,
+ org.itea2.amalthea.variability.dependency,
+ org.itea2.amalthea.variability.dependency.parser.antlr,
+ org.itea2.amalthea.variability.dependency.scoping,
+ org.itea2.amalthea.variability.dependency.parser.antlr.internal,
+ org.itea2.amalthea.variability.dependency.dependency.impl,
+ org.itea2.amalthea.variability.dependency.validation,
+ org.itea2.amalthea.variability.dependency.services,
+ org.itea2.amalthea.variability.dependency.generator,
+ org.itea2.amalthea.variability.dependency.serializer
+Import-Package: org.apache.log4j

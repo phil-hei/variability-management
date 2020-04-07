@@ -1,0 +1,662 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns:ample="http://itea.amalthea.org/variability/0.7.0/ample" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://itea.amalthea.org/variability/0.7.0/ample">
+  <xsd:annotation>
+    <xsd:documentation>*
+*******************************************************************************
+ Copyright (c) 2017 Dortmund University of Applied Sciences and Arts, Paderborn University and others.
+ All rights reserved. This program and the accompanying materials
+ are made available under the terms of the Eclipse Public License v1.0
+ which accompanies this distribution, and is available at
+ http://www.eclipse.org/legal/epl-v10.html
+*******************************************************************************</xsd:documentation>
+  </xsd:annotation>
+  <xsd:import namespace="http://www.omg.org/XMI" schemaLocation="platform:/plugin/org.eclipse.emf.ecore/model/XMI.xsd"/>
+  <xsd:simpleType name="ConstraintType">
+    <xsd:annotation>
+      <xsd:documentation>*************************************************************************************
+**********************************Enumerations**************************************
+************************************************************************************</xsd:documentation>
+    </xsd:annotation>
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="require"/>
+      <xsd:enumeration value="exclude"/>
+      <xsd:enumeration value="impedes"/>
+      <xsd:enumeration value="suggests"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="FrequencyUnit">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="hz"/>
+      <xsd:enumeration value="khz"/>
+      <xsd:enumeration value="mhz"/>
+      <xsd:enumeration value="ghz"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DataRateUnit">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="bitpers"/>
+      <xsd:enumeration value="kibitpers"/>
+      <xsd:enumeration value="mebibitpers"/>
+      <xsd:enumeration value="gibitpers"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="DataSizeUnit">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="byte"/>
+      <xsd:enumeration value="kibibyte"/>
+      <xsd:enumeration value="mebibyte"/>
+      <xsd:enumeration value="gibibyte"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ISA_Type">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="risc"/>
+      <xsd:enumeration value="cisc"/>
+      <xsd:enumeration value="vliw"/>
+      <xsd:enumeration value="simd"/>
+      <xsd:enumeration value="other"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="BusType">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="can"/>
+      <xsd:enumeration value="ethernet"/>
+      <xsd:enumeration value="lin"/>
+      <xsd:enumeration value="flexray"/>
+      <xsd:enumeration value="spi"/>
+      <xsd:enumeration value="ttcan"/>
+      <xsd:enumeration value="other"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="RW_Type">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="R"/>
+      <xsd:enumeration value="W"/>
+      <xsd:enumeration value="RW"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="ROM_Type">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="eprom"/>
+      <xsd:enumeration value="eeprom"/>
+      <xsd:enumeration value="flash"/>
+      <xsd:enumeration value="OTHER"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="CacheType">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="data"/>
+      <xsd:enumeration value="instruction"/>
+      <xsd:enumeration value="unified"/>
+      <xsd:enumeration value="other"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:simpleType name="LengthUnit">
+    <xsd:restriction base="xsd:NCName">
+      <xsd:enumeration value="_undefined_"/>
+      <xsd:enumeration value="mm"/>
+      <xsd:enumeration value="cm"/>
+    </xsd:restriction>
+  </xsd:simpleType>
+  <xsd:complexType name="SystemFamily">
+    <xsd:annotation>
+      <xsd:documentation>This class aggregates different system parts (e.g. software, hardware, os)
+and function as root element for the variability modeling process</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="featureModels" type="ample:FeatureModel"/>
+      <xsd:element name="hardwareVariabilityModels" type="ample:HardwareVariabilityModel"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="SystemFamily" type="ample:SystemFamily">
+    <xsd:annotation>
+      <xsd:documentation>This class aggregates different system parts (e.g. software, hardware, os)
+and function as root element for the variability modeling process</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="FeatureModel">
+    <xsd:annotation>
+      <xsd:documentation>*************************************************************************************
+*************************** Feature Model ******************************************
+************************************************************************************</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="root" type="ample:Mandatory"/>
+      <xsd:element name="constraints" type="ample:FeatureConstraint"/>
+      <xsd:element name="productConfigurations" type="ample:ProductConfiguration"/>
+      <xsd:element name="featureTypes" type="ample:FeatureType"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="scope" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="FeatureModel" type="ample:FeatureModel">
+    <xsd:annotation>
+      <xsd:documentation>*************************************************************************************
+*************************** Feature Model ******************************************
+************************************************************************************</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="ProductConfiguration">
+    <xsd:annotation>
+      <xsd:documentation>This class represents a distinct product configuration where all variation points of a Feature Model are bound</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="selectedFeatures" type="ample:Feature"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="selectedFeatures" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="ProductConfiguration" type="ample:ProductConfiguration">
+    <xsd:annotation>
+      <xsd:documentation>This class represents a distinct product configuration where all variation points of a Feature Model are bound</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="FeatureConstraint">
+    <xsd:annotation>
+      <xsd:documentation>This class realizes cross-tree constraints between specific features by means of require and exclude</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="ample:Feature"/>
+      <xsd:element name="target" type="ample:Feature"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="type" type="ample:ConstraintType"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="FeatureConstraint" type="ample:FeatureConstraint">
+    <xsd:annotation>
+      <xsd:documentation>This class realizes cross-tree constraints between specific features by means of require and exclude</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Feature">
+    <xsd:annotation>
+      <xsd:documentation>Represents a distinct product feature</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="types" type="ample:FeatureType"/>
+      <xsd:element name="solitaryFeatures" type="ample:SolitaryFeature"/>
+      <xsd:element name="featureGroups" type="ample:FeatureGroup"/>
+      <xsd:element name="dependencies" type="ample:Dependency"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+    <xsd:attribute name="types" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Feature" type="ample:Feature">
+    <xsd:annotation>
+      <xsd:documentation>Represents a distinct product feature</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="FeatureType">
+    <xsd:annotation>
+      <xsd:documentation>Describes the scope of a feature in order to support references through dependencies.</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="FeatureType" type="ample:FeatureType">
+    <xsd:annotation>
+      <xsd:documentation>Describes the scope of a feature in order to support references through dependencies.</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Dependency">
+    <xsd:annotation>
+      <xsd:documentation>This class make use of a xtext grammar to describe a cross-dependency, i.e. a depedency between elements of different system parts</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Dependency" type="ample:Dependency">
+    <xsd:annotation>
+      <xsd:documentation>This class make use of a xtext grammar to describe a cross-dependency, i.e. a depedency between elements of different system parts</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="true" name="SolitaryFeature">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Feature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="SolitaryFeature" type="ample:SolitaryFeature"/>
+  <xsd:complexType name="Mandatory">
+    <xsd:annotation>
+      <xsd:documentation>Features of this category are mandatory for the product configuration</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ample:SolitaryFeature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Mandatory" type="ample:Mandatory">
+    <xsd:annotation>
+      <xsd:documentation>Features of this category are mandatory for the product configuration</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Optional">
+    <xsd:annotation>
+      <xsd:documentation>Features of this category are optional for the product configuration</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ample:SolitaryFeature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Optional" type="ample:Optional">
+    <xsd:annotation>
+      <xsd:documentation>Features of this category are optional for the product configuration</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="true" name="FeatureGroup">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="FeatureGroup" type="ample:FeatureGroup"/>
+  <xsd:complexType name="AlternativeGroup">
+    <xsd:annotation>
+      <xsd:documentation>XOR decision for a given set of group features</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ample:FeatureGroup">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="alternativeFeatures" type="ample:Alternative"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="AlternativeGroup" type="ample:AlternativeGroup">
+    <xsd:annotation>
+      <xsd:documentation>XOR decision for a given set of group features</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="OrGroup">
+    <xsd:annotation>
+      <xsd:documentation>By default, at least one feature of an or group have to be selected. Can be refined with a cardinality (e.g. 2 out of 5 features have to be selected)</xsd:documentation>
+    </xsd:annotation>
+    <xsd:complexContent>
+      <xsd:extension base="ample:FeatureGroup">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="orFeatures" type="ample:Or"/>
+        </xsd:choice>
+        <xsd:attribute name="min" type="xsd:int"/>
+        <xsd:attribute name="max" type="xsd:int"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="OrGroup" type="ample:OrGroup">
+    <xsd:annotation>
+      <xsd:documentation>By default, at least one feature of an or group have to be selected. Can be refined with a cardinality (e.g. 2 out of 5 features have to be selected)</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType abstract="true" name="GroupFeature">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Feature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="GroupFeature" type="ample:GroupFeature"/>
+  <xsd:complexType name="Alternative">
+    <xsd:complexContent>
+      <xsd:extension base="ample:GroupFeature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Alternative" type="ample:Alternative"/>
+  <xsd:complexType name="Or">
+    <xsd:complexContent>
+      <xsd:extension base="ample:GroupFeature"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Or" type="ample:Or"/>
+  <xsd:complexType name="HardwareVariabilityModel">
+    <xsd:annotation>
+      <xsd:documentation>*************************************************************************************
+*********************** Hardware Variability Model *********************************
+************************************************************************************</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="ecus" type="ample:ECU"/>
+      <xsd:element name="hwConfigs" type="ample:HardwareConfiguration"/>
+      <xsd:element name="variationPoints" type="ample:HVM_VariationPoint"/>
+      <xsd:element name="vpConstraints" type="ample:HVM_VariationPointConstraint"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="HardwareVariabilityModel" type="ample:HardwareVariabilityModel">
+    <xsd:annotation>
+      <xsd:documentation>*************************************************************************************
+*********************** Hardware Variability Model *********************************
+************************************************************************************</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="HardwareConfiguration">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="selectedVPs" type="ample:HVM_VariationPoint"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="selectedVPs" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="HardwareConfiguration" type="ample:HardwareConfiguration"/>
+  <xsd:complexType abstract="true" name="HardwareElement">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="customProperty" type="ample:Property"/>
+      <xsd:element name="genericComponents" type="ample:GenericComponent"/>
+      <xsd:element name="pins" type="ample:Pin"/>
+      <xsd:element name="ports" type="ample:Port"/>
+      <xsd:element name="dependencies" type="ample:Dependency"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="identifier" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="HardwareElement" type="ample:HardwareElement"/>
+  <xsd:complexType name="ECU">
+    <xsd:complexContent>
+      <xsd:extension base="ample:HardwareElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="buses" type="ample:Bus"/>
+          <xsd:element name="dimension" type="ample:Dimension"/>
+          <xsd:element name="microcontrollers" type="ample:Microcontroller"/>
+          <xsd:element name="peripherals" type="ample:Peripheral"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ECU" type="ample:ECU"/>
+  <xsd:complexType name="Microcontroller">
+    <xsd:complexContent>
+      <xsd:extension base="ample:HardwareElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="connectedMCs" type="ample:Microcontroller"/>
+          <xsd:element name="cores" type="ample:Core"/>
+          <xsd:element name="nestedMemory" type="ample:Memory"/>
+        </xsd:choice>
+        <xsd:attribute name="connectedMCs" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Microcontroller" type="ample:Microcontroller"/>
+  <xsd:complexType name="Core">
+    <xsd:complexContent>
+      <xsd:extension base="ample:HardwareElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="frequency" type="ample:Frequency"/>
+          <xsd:element name="caches" type="ample:Cache"/>
+        </xsd:choice>
+        <xsd:attribute name="bitWidth" type="xsd:int"/>
+        <xsd:attribute name="isa" type="ample:ISA_Type"/>
+        <xsd:attribute name="quantity" type="xsd:int"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Core" type="ample:Core"/>
+  <xsd:complexType abstract="true" name="Memory">
+    <xsd:complexContent>
+      <xsd:extension base="ample:HardwareElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="size" type="ample:DataSize"/>
+        </xsd:choice>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Memory" type="ample:Memory"/>
+  <xsd:complexType name="Cache">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Memory">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="frequency" type="ample:Frequency"/>
+        </xsd:choice>
+        <xsd:attribute name="type" type="ample:CacheType"/>
+        <xsd:attribute name="level" type="xsd:int"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Cache" type="ample:Cache"/>
+  <xsd:complexType name="RAM">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Memory">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="frequency" type="ample:Frequency"/>
+        </xsd:choice>
+        <xsd:attribute name="isVolatile" type="xsd:boolean"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="RAM" type="ample:RAM"/>
+  <xsd:complexType name="ROM">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Memory">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="readTime" type="ample:DataRate"/>
+          <xsd:element name="writeTime" type="ample:DataRate"/>
+        </xsd:choice>
+        <xsd:attribute name="romType" type="ample:ROM_Type"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="ROM" type="ample:ROM"/>
+  <xsd:complexType name="Bus">
+    <xsd:complexContent>
+      <xsd:extension base="ample:HardwareElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="dataRate" type="ample:DataRate"/>
+        </xsd:choice>
+        <xsd:attribute name="type" type="ample:BusType"/>
+        <xsd:attribute name="isSerial" type="xsd:boolean"/>
+        <xsd:attribute name="quantity" type="xsd:int"/>
+        <xsd:attribute name="rwType" type="ample:RW_Type"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Bus" type="ample:Bus"/>
+  <xsd:complexType abstract="true" name="Peripheral">
+    <xsd:complexContent>
+      <xsd:extension base="ample:HardwareElement"/>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Peripheral" type="ample:Peripheral"/>
+  <xsd:complexType name="Sensor">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Peripheral">
+        <xsd:attribute name="quantity" type="xsd:int"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Sensor" type="ample:Sensor"/>
+  <xsd:complexType name="Actuator">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Peripheral">
+        <xsd:attribute name="quantity" type="xsd:int"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Actuator" type="ample:Actuator"/>
+  <xsd:complexType name="Watchdog">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Peripheral">
+        <xsd:attribute name="standard" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Watchdog" type="ample:Watchdog"/>
+  <xsd:complexType name="GenericComponent">
+    <xsd:complexContent>
+      <xsd:extension base="ample:HardwareElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="unit" type="ample:Unit"/>
+        </xsd:choice>
+        <xsd:attribute name="hwType" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="GenericComponent" type="ample:GenericComponent"/>
+  <xsd:complexType name="Pin">
+    <xsd:complexContent>
+      <xsd:extension base="ample:HardwareElement">
+        <xsd:attribute name="num" type="xsd:int"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Pin" type="ample:Pin"/>
+  <xsd:complexType name="Port">
+    <xsd:complexContent>
+      <xsd:extension base="ample:HardwareElement">
+        <xsd:choice maxOccurs="unbounded" minOccurs="0">
+          <xsd:element name="aggregatedPins" type="ample:Pin"/>
+        </xsd:choice>
+        <xsd:attribute name="aggregatedPins" type="xsd:string"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Port" type="ample:Port"/>
+  <xsd:complexType name="HVM_VariationPoint">
+    <xsd:annotation>
+      <xsd:documentation> Variability</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="variationElements" type="ample:VariationElement"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="HVM_VariationPoint" type="ample:HVM_VariationPoint">
+    <xsd:annotation>
+      <xsd:documentation> Variability</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="VariationElement">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="affectedElement" type="ample:HardwareElement"/>
+      <xsd:element name="removeElements" type="ample:HardwareElement"/>
+      <xsd:element name="addElements" type="ample:HardwareElement"/>
+      <xsd:element name="replaceElement" type="ample:HardwareElement"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="affectedElement" type="xsd:string"/>
+    <xsd:attribute name="removeElements" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="VariationElement" type="ample:VariationElement"/>
+  <xsd:complexType name="HVM_VariationPointConstraint">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element name="source" type="ample:HVM_VariationPoint"/>
+      <xsd:element name="target" type="ample:HVM_VariationPoint"/>
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="constraintType" type="ample:ConstraintType"/>
+    <xsd:attribute name="source" type="xsd:string"/>
+    <xsd:attribute name="target" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="HVM_VariationPointConstraint" type="ample:HVM_VariationPointConstraint"/>
+  <xsd:complexType name="Property">
+    <xsd:annotation>
+      <xsd:documentation> Attributes</xsd:documentation>
+    </xsd:annotation>
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="name" type="xsd:string"/>
+    <xsd:attribute name="charValue" type="xsd:string"/>
+    <xsd:attribute name="description" type="xsd:string"/>
+    <xsd:attribute name="numValue" type="xsd:double"/>
+  </xsd:complexType>
+  <xsd:element name="Property" type="ample:Property">
+    <xsd:annotation>
+      <xsd:documentation> Attributes</xsd:documentation>
+    </xsd:annotation>
+  </xsd:element>
+  <xsd:complexType name="Dimension">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="unit" type="ample:LengthUnit"/>
+    <xsd:attribute name="length" type="xsd:int"/>
+    <xsd:attribute name="width" type="xsd:int"/>
+    <xsd:attribute name="height" type="xsd:int"/>
+  </xsd:complexType>
+  <xsd:element name="Dimension" type="ample:Dimension"/>
+  <xsd:complexType abstract="true" name="Unit">
+    <xsd:choice maxOccurs="unbounded" minOccurs="0">
+      <xsd:element ref="xmi:Extension"/>
+    </xsd:choice>
+    <xsd:attribute ref="xmi:id"/>
+    <xsd:attributeGroup ref="xmi:ObjectAttribs"/>
+    <xsd:attribute name="value" type="xsd:string"/>
+  </xsd:complexType>
+  <xsd:element name="Unit" type="ample:Unit"/>
+  <xsd:complexType name="Frequency">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Unit">
+        <xsd:attribute name="frequencyUnit" type="ample:FrequencyUnit"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="Frequency" type="ample:Frequency"/>
+  <xsd:complexType name="DataRate">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Unit">
+        <xsd:attribute name="dataRateUnit" type="ample:DataRateUnit"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="DataRate" type="ample:DataRate"/>
+  <xsd:complexType name="DataSize">
+    <xsd:complexContent>
+      <xsd:extension base="ample:Unit">
+        <xsd:attribute name="dataSizeUnit" type="ample:DataSizeUnit"/>
+      </xsd:extension>
+    </xsd:complexContent>
+  </xsd:complexType>
+  <xsd:element name="DataSize" type="ample:DataSize"/>
+</xsd:schema>

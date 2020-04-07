@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.itea2.amalthea.variability.vacomo/src" modelPluginID="org.itea2.amalthea.variability.vacomo"
+    runtimeJar="true" modelName="Vacomo" updateClasspath="false" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    testsDirectory="" booleanFlagsField="eFlags" booleanFlagsReservedBits="8" importerID="org.eclipse.emf.ecore.xcore.importer"
+    containmentProxies="true" complianceLevel="8.0" language="en" usedGenPackages="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"
+    operationReflection="true" importOrganizing="true" decoration="Live" oSGiCompatible="true">
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="Ecore.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <genAnnotations source="http://www.eclipse.org/emf/2002/GenModel/exporter/org.eclipse.xsd.ecore.exporter.xmi">
+    <genAnnotations source="selectedPackages">
+      <details key="http://www.eclipse.org/emf/2002/Ecore" value="EcoreXMI.xsd"/>
+    </genAnnotations>
+    <details key="directoryURI" value="."/>
+  </genAnnotations>
+  <foreignModel>vacomo.xcore</foreignModel>
+  <modelPluginVariables>org.eclipse.xtext.xbase.lib</modelPluginVariables>
+  <modelPluginVariables>org.eclipse.emf.ecore.xcore.lib</modelPluginVariables>
+  <genPackages prefix="Vacomo" basePackage="org.itea2.amalthea.variability" disposableProviderFactory="true"
+      ecorePackage="vacomo.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="vacomo.ecore#//ComponentType">
+      <genEnumLiterals ecoreEnumLiteral="vacomo.ecore#//ComponentType/_undefined_"/>
+      <genEnumLiterals ecoreEnumLiteral="vacomo.ecore#//ComponentType/atomic"/>
+      <genEnumLiterals ecoreEnumLiteral="vacomo.ecore#//ComponentType/hierarchical"/>
+      <genEnumLiterals ecoreEnumLiteral="vacomo.ecore#//ComponentType/sensorActuator"/>
+    </genEnums>
+    <genClasses ecoreClass="vacomo.ecore#//VariableComponentModel">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//VariableComponentModel/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vacomo.ecore#//VariableComponentModel/system"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vacomo.ecore#//VariableComponentModel/components"/>
+    </genClasses>
+    <genClasses ecoreClass="vacomo.ecore#//Component">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//Component/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//Component/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//Component/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vacomo.ecore#//Component/ports"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vacomo.ecore#//Port">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//Port/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//Port/description"/>
+    </genClasses>
+    <genClasses ecoreClass="vacomo.ecore#//RequiredPort"/>
+    <genClasses ecoreClass="vacomo.ecore#//ProvidedPort"/>
+    <genClasses ecoreClass="vacomo.ecore#//System">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//System/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//System/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vacomo.ecore#//System/connectors"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vacomo.ecore#//System/compInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vacomo.ecore#//System/variationPoints"/>
+    </genClasses>
+    <genClasses ecoreClass="vacomo.ecore#//ComponentInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//ComponentInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//ComponentInstance/isOptional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vacomo.ecore#//ComponentInstance/type"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vacomo.ecore#//ComponentInstance/subCompInstances"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vacomo.ecore#//ComponentInstance/portInstances"/>
+    </genClasses>
+    <genClasses ecoreClass="vacomo.ecore#//PortInstance">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//PortInstance/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//PortInstance/isOptional"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vacomo.ecore#//PortInstance/type"/>
+    </genClasses>
+    <genClasses image="false" ecoreClass="vacomo.ecore#//Connector"/>
+    <genClasses ecoreClass="vacomo.ecore#//CommonConnector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vacomo.ecore#//CommonConnector/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vacomo.ecore#//CommonConnector/target"/>
+    </genClasses>
+    <genClasses ecoreClass="vacomo.ecore#//VariableConnector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vacomo.ecore#//VariableConnector/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vacomo.ecore#//VariableConnector/target"/>
+    </genClasses>
+    <genClasses ecoreClass="vacomo.ecore#//VariationPoint">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//VariationPoint/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//VariationPoint/description"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference vacomo.ecore#//VariationPoint/variants"/>
+    </genClasses>
+    <genClasses ecoreClass="vacomo.ecore#//Variant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute vacomo.ecore#//Variant/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference vacomo.ecore#//Variant/compInstances"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

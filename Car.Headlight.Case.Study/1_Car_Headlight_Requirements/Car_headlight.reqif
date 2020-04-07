@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<REQ-IF xmlns="http://www.omg.org/spec/ReqIF/20110401/reqif.xsd" xmlns:configuration="http://eclipse.org/rmf/pror/toolextensions/1.0">
+  <THE-HEADER>
+    <REQ-IF-HEADER IDENTIFIER="rmf-ce63ebc7-ac5c-4c1e-a2df-e791fb13d9a3">
+      <COMMENT>Created by: Phili</COMMENT>
+      <CREATION-TIME>2016-09-13T16:46:15.083+02:00</CREATION-TIME>
+      <REQ-IF-TOOL-ID>fmStudio (http://formalmind.com/studio)</REQ-IF-TOOL-ID>
+      <REQ-IF-VERSION>1.0</REQ-IF-VERSION>
+      <SOURCE-TOOL-ID>ProR (http://pror.org)</SOURCE-TOOL-ID>
+      <TITLE>Car_Headlight_Req</TITLE>
+    </REQ-IF-HEADER>
+  </THE-HEADER>
+  <CORE-CONTENT>
+    <REQ-IF-CONTENT>
+      <DATATYPES>
+        <DATATYPE-DEFINITION-STRING IDENTIFIER="_0lcJo3nAEeayl9hoiMJE2A" LAST-CHANGE="2016-09-13T16:46:15.083+02:00" LONG-NAME="T_String32k" MAX-LENGTH="32000"/>
+        <DATATYPE-DEFINITION-BOOLEAN IDENTIFIER="_MF1eUHpwEeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T13:41:31.934+02:00" LONG-NAME="Boolean"/>
+      </DATATYPES>
+      <SPEC-TYPES>
+        <SPEC-OBJECT-TYPE IDENTIFIER="_0lcJpHnAEeayl9hoiMJE2A" LAST-CHANGE="2016-09-13T16:46:15.083+02:00" LONG-NAME="Requirement Type">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_0lcJpXnAEeayl9hoiMJE2A" LAST-CHANGE="2016-09-13T16:46:15.083+02:00" LONG-NAME="Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_0lcJo3nAEeayl9hoiMJE2A</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+            <ATTRIBUTE-DEFINITION-BOOLEAN IDENTIFIER="__SNa0HpvEeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T13:40:05.047+02:00" LONG-NAME="Optional">
+              <TYPE>
+                <DATATYPE-DEFINITION-BOOLEAN-REF>_MF1eUHpwEeaIKvg-cZvnWA</DATATYPE-DEFINITION-BOOLEAN-REF>
+              </TYPE>
+              <DEFAULT-VALUE>
+                <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="false">
+                  <DEFINITION>
+                    <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+                  </DEFINITION>
+                </ATTRIBUTE-VALUE-BOOLEAN>
+              </DEFAULT-VALUE>
+            </ATTRIBUTE-DEFINITION-BOOLEAN>
+          </SPEC-ATTRIBUTES>
+        </SPEC-OBJECT-TYPE>
+        <SPECIFICATION-TYPE IDENTIFIER="_0lcJpnnAEeayl9hoiMJE2A" LAST-CHANGE="2016-09-13T16:46:15.083+02:00" LONG-NAME="Specification Type">
+          <SPEC-ATTRIBUTES>
+            <ATTRIBUTE-DEFINITION-STRING IDENTIFIER="_0lcJp3nAEeayl9hoiMJE2A" LAST-CHANGE="2016-09-13T16:46:15.083+02:00" LONG-NAME="Description">
+              <TYPE>
+                <DATATYPE-DEFINITION-STRING-REF>_0lcJo3nAEeayl9hoiMJE2A</DATATYPE-DEFINITION-STRING-REF>
+              </TYPE>
+            </ATTRIBUTE-DEFINITION-STRING>
+          </SPEC-ATTRIBUTES>
+        </SPECIFICATION-TYPE>
+      </SPEC-TYPES>
+      <SPEC-OBJECTS>
+        <SPEC-OBJECT IDENTIFIER="_0lcJqHnAEeayl9hoiMJE2A" LAST-CHANGE="2016-09-14T12:47:04.853+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Functional Requirements">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_S7q2EHpiEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-29T15:25:26.542+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Response: The system must react to user inputs via display or switches within 500 ms">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_aqSuoHpiEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T12:30:01.198+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Availability: The system services shall have an avaiability of 99,99%">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_sN6PAHplEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-29T16:04:28.283+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The high beam headlamps provides a bright, centre-weighted distribution of light">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_uYFnkHplEeaUYI8eGlyCNg" LAST-CHANGE="2017-02-28T16:45:09.514+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="In the European market, high-beam intensity values must be at least 20,000 cd and at most 75.000 cd">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_ynTaAHplEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-29T16:31:46.005+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="In the Canadian market, high-beam intensity values must be at least 30,000 cd and at most 140.000 cd">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_remAAHpnEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-29T16:04:03.642+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="In right-traffic countries, the headlamp directs most of the light downward/rightward">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="false">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_89-A8HpnEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-29T16:04:11.370+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="In left-traffic countries, the headlamp directs most of the light downward/leftward">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="false">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_aMAocHpoEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T12:45:50.222+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Non-Functional Requirements">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_dl0K8HpqEeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:53:29.133+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="In the European and Canadian market, functionally dedicated daytime running light is required">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_qy5I4HptEeaIKvg-cZvnWA" LAST-CHANGE="2016-09-29T16:03:57.955+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The Headlamps produce white light">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_Fv8vwHpvEeaIKvg-cZvnWA" LAST-CHANGE="2016-09-29T16:32:04.149+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The high beam assistant detects the headlight of forthcomming vehicles from a distance of 1000 m ">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_P17H8Hp0EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:24:05.584+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The high beam can have an assistant for automatically turning on/off the high beams">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_b_KxsHp0EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-29T16:04:41.410+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The high beam assistant detects the backlight of vehicles ahead from a distance of 500 m ">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_nTQ8IHp0EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-29T16:32:45.237+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The high beam assistant temporarily turn off the high beams if vehicles ahead are detected">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_I22LEHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-29T16:33:26.661+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The high beam assistant turn off the high beams if forthcomming vehicles are detected">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_TvGuEHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-29T15:21:20.860+02:00" LONG-NAME="High beams control">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can turn on/off the high beams">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_umK3IHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:28:20.613+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can turn on /off the fog light">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_yA54oHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:28:43.925+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can control the car headlight">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_5-s1oHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:29:36.497+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can turn on/off the daytime running light">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_S6mdEHp4EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:58:19.478+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The parking light considers the turn signal position">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_tmW4kHp5EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:49:42.945+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can turn on/off the high beam assistant">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_r4iZ8Hp7EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T15:03:50.633+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The high beam assistant can be turned on/off by the user">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_bUyrgIZHEeaCAqjAspbp8w" LAST-CHANGE="2016-09-29T15:19:57.176+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can turn on/off the turn signal">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_hLn8AIZHEeaCAqjAspbp8w" LAST-CHANGE="2016-09-29T15:20:36.630+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can turn on/off the dim light">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_j4lRgIZHEeaCAqjAspbp8w" LAST-CHANGE="2016-09-29T15:20:55.263+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can turn on/off the parking light">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_hV1uUIZPEeaCAqjAspbp8w" LAST-CHANGE="2016-10-07T11:14:51.883+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The parking light increase the visibility of the car ">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_ysuPsIZREeaCAqjAspbp8w" LAST-CHANGE="2016-09-29T16:34:10.126+02:00" LONG-NAME="Dim Light Control">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can turn on/off the dim light">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_2AuXEIZREeaCAqjAspbp8w" LAST-CHANGE="2016-09-29T16:34:32.719+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The user can turn on/off the parking light">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_LrOQ8IxuEea_idClwzfFKg" LAST-CHANGE="2016-10-07T11:12:28.018+02:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The parking light considers the turn signal position: If parking light and turn signal are active, only the according side of the parking light glows">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+        <SPEC-OBJECT IDENTIFIER="_apRaYP3JEea8bt2OEvrErw" LAST-CHANGE="2017-02-28T16:20:06.698+01:00"/>
+        <SPEC-OBJECT IDENTIFIER="_0Avw8P8yEea0W9ZTA0Ml1g" LAST-CHANGE="2017-03-02T11:29:06.662+01:00">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="The static cornering light considers the position of the steering wheel">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJpXnAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+            <ATTRIBUTE-VALUE-BOOLEAN THE-VALUE="true">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-BOOLEAN-REF>__SNa0HpvEeaIKvg-cZvnWA</ATTRIBUTE-DEFINITION-BOOLEAN-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-BOOLEAN>
+          </VALUES>
+          <TYPE>
+            <SPEC-OBJECT-TYPE-REF>_0lcJpHnAEeayl9hoiMJE2A</SPEC-OBJECT-TYPE-REF>
+          </TYPE>
+        </SPEC-OBJECT>
+      </SPEC-OBJECTS>
+      <SPEC-RELATIONS>
+        <SPEC-RELATION IDENTIFIER="_-oe5oHp1EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:22:58.168+02:00">
+          <TARGET>
+            <SPEC-OBJECT-REF>_nTQ8IHp0EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+          </TARGET>
+          <SOURCE>
+            <SPEC-OBJECT-REF>_b_KxsHp0EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+          </SOURCE>
+        </SPEC-RELATION>
+        <SPEC-RELATION IDENTIFIER="_OZZNoHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:24:44.385+02:00">
+          <TARGET>
+            <SPEC-OBJECT-REF>_I22LEHp2EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+          </TARGET>
+          <SOURCE>
+            <SPEC-OBJECT-REF>_Fv8vwHpvEeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+          </SOURCE>
+        </SPEC-RELATION>
+      </SPEC-RELATIONS>
+      <SPECIFICATIONS>
+        <SPECIFICATION IDENTIFIER="_0lcJqnnAEeayl9hoiMJE2A" LAST-CHANGE="2016-09-13T16:46:15.083+02:00" LONG-NAME="Specification Document">
+          <VALUES>
+            <ATTRIBUTE-VALUE-STRING THE-VALUE="Requirements Document">
+              <DEFINITION>
+                <ATTRIBUTE-DEFINITION-STRING-REF>_0lcJp3nAEeayl9hoiMJE2A</ATTRIBUTE-DEFINITION-STRING-REF>
+              </DEFINITION>
+            </ATTRIBUTE-VALUE-STRING>
+          </VALUES>
+          <TYPE>
+            <SPECIFICATION-TYPE-REF>_0lcJpnnAEeayl9hoiMJE2A</SPECIFICATION-TYPE-REF>
+          </TYPE>
+          <CHILDREN>
+            <SPEC-HIERARCHY IDENTIFIER="_0lcJrHnAEeayl9hoiMJE2A" LAST-CHANGE="2016-09-13T16:46:15.083+02:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_0lcJqHnAEeayl9hoiMJE2A</SPEC-OBJECT-REF>
+              </OBJECT>
+              <CHILDREN>
+                <SPEC-HIERARCHY IDENTIFIER="_qzQ8UHptEeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:47:37.896+02:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_qy5I4HptEeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_re8lUHpnEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T12:47:29.431+02:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_remAAHpnEeaUYI8eGlyCNg</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_8-V0YHpnEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T12:47:29.431+02:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_89-A8HpnEeaUYI8eGlyCNg</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_sOTQkHplEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T14:48:18.590+02:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_sN6PAHplEeaUYI8eGlyCNg</SPEC-OBJECT-REF>
+                  </OBJECT>
+                  <CHILDREN>
+                    <SPEC-HIERARCHY IDENTIFIER="_uYdbAHplEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T12:47:42.234+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_uYFnkHplEeaUYI8eGlyCNg</SPEC-OBJECT-REF>
+                      </OBJECT>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_ynpYQHplEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T12:47:45.259+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_ynTaAHplEeaUYI8eGlyCNg</SPEC-OBJECT-REF>
+                      </OBJECT>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_P2ZCAHp0EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:48:16.783+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_P17H8Hp0EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                      </OBJECT>
+                      <CHILDREN>
+                        <SPEC-HIERARCHY IDENTIFIER="_FwUjMHpvEeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:11:27.410+02:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_Fv8vwHpvEeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_b_locHp0EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:11:52.925+02:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_b_KxsHp0EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_I3PMoHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:24:13.104+02:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_I22LEHp2EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_nTm6YHp0EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:13:13.006+02:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_nTQ8IHp0EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                        <SPEC-HIERARCHY IDENTIFIER="_r460cHp7EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T15:03:50.633+02:00">
+                          <OBJECT>
+                            <SPEC-OBJECT-REF>_r4iZ8Hp7EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                          </OBJECT>
+                        </SPEC-HIERARCHY>
+                      </CHILDREN>
+                    </SPEC-HIERARCHY>
+                  </CHILDREN>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_dmNMgHpqEeaIKvg-cZvnWA" LAST-CHANGE="2017-02-28T16:13:56.790+01:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_dl0K8HpqEeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_yBRsEHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:48:57.374+02:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_yA54oHp2EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                  </OBJECT>
+                  <CHILDREN>
+                    <SPEC-HIERARCHY IDENTIFIER="_TvfvoHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:29:31.905+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_TvGuEHp2EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                      </OBJECT>
+                      <CHILDREN/>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_ytMw0IZREeaCAqjAspbp8w" LAST-CHANGE="2016-09-29T16:35:06.808+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_ysuPsIZREeaCAqjAspbp8w</SPEC-OBJECT-REF>
+                      </OBJECT>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_2BJN0IZREeaCAqjAspbp8w" LAST-CHANGE="2016-09-29T16:35:06.808+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_2AuXEIZREeaCAqjAspbp8w</SPEC-OBJECT-REF>
+                      </OBJECT>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_umg1YHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:29:33.985+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_umK3IHp2EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                      </OBJECT>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_tmxIQHp5EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:50:24.465+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_tmW4kHp5EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                      </OBJECT>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_5_EpEHp2EeaIKvg-cZvnWA" LAST-CHANGE="2016-09-14T14:29:36.497+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_5-s1oHp2EeaIKvg-cZvnWA</SPEC-OBJECT-REF>
+                      </OBJECT>
+                    </SPEC-HIERARCHY>
+                    <SPEC-HIERARCHY IDENTIFIER="_bVTo4IZHEeaCAqjAspbp8w" LAST-CHANGE="2016-09-29T15:19:57.176+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_bUyrgIZHEeaCAqjAspbp8w</SPEC-OBJECT-REF>
+                      </OBJECT>
+                    </SPEC-HIERARCHY>
+                  </CHILDREN>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_hWP-AIZPEeaCAqjAspbp8w" LAST-CHANGE="2016-09-29T16:20:10.519+02:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_hV1uUIZPEeaCAqjAspbp8w</SPEC-OBJECT-REF>
+                  </OBJECT>
+                  <CHILDREN>
+                    <SPEC-HIERARCHY IDENTIFIER="_LruAMIxuEea_idClwzfFKg" LAST-CHANGE="2016-10-07T11:12:28.018+02:00">
+                      <OBJECT>
+                        <SPEC-OBJECT-REF>_LrOQ8IxuEea_idClwzfFKg</SPEC-OBJECT-REF>
+                      </OBJECT>
+                    </SPEC-HIERARCHY>
+                  </CHILDREN>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_0BKAoP8yEea0W9ZTA0Ml1g" LAST-CHANGE="2017-03-02T11:27:07.707+01:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_0Avw8P8yEea0W9ZTA0Ml1g</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+              </CHILDREN>
+            </SPEC-HIERARCHY>
+            <SPEC-HIERARCHY IDENTIFIER="_aMXNwHpoEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T12:45:50.222+02:00">
+              <OBJECT>
+                <SPEC-OBJECT-REF>_aMAocHpoEeaUYI8eGlyCNg</SPEC-OBJECT-REF>
+              </OBJECT>
+              <CHILDREN>
+                <SPEC-HIERARCHY IDENTIFIER="_S8DQkHpiEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T12:46:22.635+02:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_S7q2EHpiEeaUYI8eGlyCNg</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+                <SPEC-HIERARCHY IDENTIFIER="_aqqiEHpiEeaUYI8eGlyCNg" LAST-CHANGE="2016-09-14T12:46:32.316+02:00">
+                  <OBJECT>
+                    <SPEC-OBJECT-REF>_aqSuoHpiEeaUYI8eGlyCNg</SPEC-OBJECT-REF>
+                  </OBJECT>
+                </SPEC-HIERARCHY>
+              </CHILDREN>
+            </SPEC-HIERARCHY>
+          </CHILDREN>
+        </SPECIFICATION>
+      </SPECIFICATIONS>
+    </REQ-IF-CONTENT>
+  </CORE-CONTENT>
+  <TOOL-EXTENSIONS>
+    <REQ-IF-TOOL-EXTENSION>
+      <configuration:ProrToolExtension>
+        <configuration:specViewConfigurations>
+          <configuration:ProrSpecViewConfiguration specification="_0lcJqnnAEeayl9hoiMJE2A">
+            <configuration:columns>
+              <configuration:Column label="Description" width="711"/>
+              <configuration:Column label="Optional" width="64"/>
+            </configuration:columns>
+            <configuration:leftHeaderColumn>
+              <configuration:Column label="Lead Header Column" width="74"/>
+            </configuration:leftHeaderColumn>
+          </configuration:ProrSpecViewConfiguration>
+        </configuration:specViewConfigurations>
+        <configuration:generalConfiguration>
+          <configuration:ProrGeneralConfiguration>
+            <configuration:labelConfiguration>
+              <configuration:LabelConfiguration>
+                <defaultLabel>Description</defaultLabel>
+              </configuration:LabelConfiguration>
+            </configuration:labelConfiguration>
+          </configuration:ProrGeneralConfiguration>
+        </configuration:generalConfiguration>
+      </configuration:ProrToolExtension>
+    </REQ-IF-TOOL-EXTENSION>
+  </TOOL-EXTENSIONS>
+</REQ-IF>
